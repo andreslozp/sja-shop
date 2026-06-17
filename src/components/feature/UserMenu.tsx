@@ -39,18 +39,27 @@ export default function UserMenu() {
             <p className="text-sm font-semibold text-foreground-800">{userName}</p>
             <p className="text-xs text-foreground-500">Parishioner</p>
           </div>
-          <a href="/shop" className="flex items-center gap-2 px-4 py-2.5 text-sm text-foreground-700 hover:bg-background-50 transition-colors cursor-pointer">
+          <button
+            onClick={() => setOpen(false)}
+            className="flex items-center gap-2 w-full px-4 py-2.5 text-sm text-foreground-700 hover:bg-background-50 transition-colors cursor-pointer text-left"
+          >
             <i className="ri-store-2-line text-base text-foreground-500" />
             My Orders
-          </a>
-          <a href="#" className="flex items-center gap-2 px-4 py-2.5 text-sm text-foreground-700 hover:bg-background-50 transition-colors cursor-pointer">
+          </button>
+          <button
+            onClick={() => setOpen(false)}
+            className="flex items-center gap-2 w-full px-4 py-2.5 text-sm text-foreground-700 hover:bg-background-50 transition-colors cursor-pointer text-left"
+          >
             <i className="ri-heart-line text-base text-foreground-500" />
             Wishlist
-          </a>
-          <a href="#" className="flex items-center gap-2 px-4 py-2.5 text-sm text-foreground-700 hover:bg-background-50 transition-colors cursor-pointer">
+          </button>
+          <button
+            onClick={() => setOpen(false)}
+            className="flex items-center gap-2 w-full px-4 py-2.5 text-sm text-foreground-700 hover:bg-background-50 transition-colors cursor-pointer text-left"
+          >
             <i className="ri-settings-3-line text-base text-foreground-500" />
             Account Settings
-          </a>
+          </button>
           <div className="border-t border-background-100 mt-1 pt-1">
             <button
               onClick={() => { logout(); setOpen(false); }}

@@ -23,52 +23,52 @@ export default function Navbar() {
     { label: t('nav.home'), href: '/' },
     {
       label: t('nav.parish'),
-      href: '#',
+      href: 'https://stjoan.org/wp/parish/',
       hasDropdown: true,
       children: [
-        { label: 'About Our Parish', href: '#' },
-        { label: 'Parish Staff', href: '#' },
-        { label: 'Visitors Center', href: '#' },
-        { label: 'Testimonials', href: '#' },
+        { label: 'About Our Parish', href: 'https://stjoan.org/wp/parish/' },
+        { label: 'Parish Staff', href: 'https://stjoan.org/wp/parish/' },
+        { label: 'Visitors Center', href: 'https://stjoan.org/wp/parish/' },
+        { label: 'Testimonials', href: 'https://stjoan.org/wp/parish/' },
       ],
     },
     {
       label: t('nav.worship'),
-      href: '#',
+      href: 'https://stjoan.org/wp/worship-life-sacraments/',
       hasDropdown: true,
       children: [
-        { label: 'Mass Schedule', href: '#' },
-        { label: 'Sacraments', href: '#' },
-        { label: 'Baptism', href: '#' },
-        { label: 'Marriage', href: '#' },
-        { label: 'Funerals', href: '#' },
+        { label: 'Mass Schedule', href: 'https://stjoan.org/wp/worship-life-sacraments/' },
+        { label: 'Sacraments', href: 'https://stjoan.org/wp/worship-life-sacraments/' },
+        { label: 'Baptism', href: 'https://stjoan.org/wp/worship-life-sacraments/' },
+        { label: 'Marriage', href: 'https://stjoan.org/wp/worship-life-sacraments/' },
+        { label: 'Funerals', href: 'https://stjoan.org/wp/worship-life-sacraments/' },
       ],
     },
     {
       label: t('nav.school'),
-      href: '#',
+      href: 'https://stjoan.org/wp/school/',
       hasDropdown: true,
       children: [
-        { label: 'About Our School', href: '#' },
-        { label: 'Admissions', href: '#' },
-        { label: 'Academics', href: '#' },
-        { label: 'Open House', href: '#' },
+        { label: 'About Our School', href: 'https://stjoan.org/wp/school/' },
+        { label: 'Admissions', href: 'https://stjoan.org/wp/school/' },
+        { label: 'Academics', href: 'https://stjoan.org/wp/school/' },
+        { label: 'Open House', href: 'https://stjoan.org/wp/school/' },
       ],
     },
     {
       label: t('nav.ministries'),
-      href: '#',
+      href: 'https://stjoan.org/wp/ministries/',
       hasDropdown: true,
       children: [
-        { label: 'Liturgical Music', href: '#' },
-        { label: 'Care Ministry', href: '#' },
-        { label: 'Food Pantry', href: '#' },
-        { label: 'Youth Ministry', href: '#' },
+        { label: 'Liturgical Music', href: 'https://stjoan.org/wp/ministries/' },
+        { label: 'Care Ministry', href: 'https://stjoan.org/wp/ministries/' },
+        { label: 'Food Pantry', href: 'https://stjoan.org/wp/ministries/' },
+        { label: 'Youth Ministry', href: 'https://stjoan.org/wp/ministries/' },
       ],
     },
-    { label: t('nav.religiousEducation'), href: '#' },
-    { label: t('nav.occia'), href: '#' },
-    { label: t('nav.waysToGive'), href: '#' },
+    { label: t('nav.religiousEducation'), href: 'https://stjoan.org/wp/ccd/' },
+    { label: t('nav.occia'), href: 'https://stjoan.org/wp/rcia/' },
+    { label: t('nav.waysToGive'), href: 'https://stjoan.org/wp/development-stewardship/' },
     { label: t('nav.shop'), href: '/shop' },
     { label: t('nav.marketplace'), href: '/marketplace' },
   ];
@@ -88,8 +88,10 @@ export default function Navbar() {
             >
               <a
                 href={item.href}
+                target={item.href.startsWith('http') ? '_blank' : undefined}
+                rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 className={`flex items-center gap-1 px-3.5 py-3.5 text-[13px] font-medium whitespace-nowrap transition-all cursor-pointer border-b-2 ${
-                  item.href === '/'
+                  (item.href === '/' || item.href === '/shop' || item.href === '/marketplace')
                     ? 'border-primary-500 text-primary-500'
                     : 'border-transparent text-foreground-700 hover:text-primary-500 hover:border-primary-500'
                 }`}
@@ -107,6 +109,8 @@ export default function Navbar() {
                     <a
                       key={child.label}
                       href={child.href}
+                      target={child.href.startsWith('http') ? '_blank' : undefined}
+                      rel={child.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                       className="block px-4 py-2.5 text-sm text-foreground-700 hover:text-primary-500 hover:bg-primary-50 transition-colors cursor-pointer"
                     >
                       {child.label}
@@ -167,8 +171,10 @@ export default function Navbar() {
               <div key={item.label}>
                 <a
                   href={item.href}
+                  target={item.href.startsWith('http') ? '_blank' : undefined}
+                  rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   className={`flex items-center justify-between px-3 py-2.5 text-sm font-medium rounded-lg transition-colors cursor-pointer ${
-                    item.href === '/'
+                    (item.href === '/' || item.href === '/shop' || item.href === '/marketplace')
                       ? 'text-primary-500 bg-primary-50'
                       : 'text-foreground-700 hover:text-primary-500 hover:bg-primary-50'
                   }`}
@@ -184,6 +190,8 @@ export default function Navbar() {
                       <a
                         key={child.label}
                         href={child.href}
+                        target={child.href.startsWith('http') ? '_blank' : undefined}
+                        rel={child.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                         className="block px-3 py-2 text-sm text-foreground-600 hover:text-primary-500 transition-colors cursor-pointer"
                       >
                         {child.label}

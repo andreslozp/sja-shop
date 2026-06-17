@@ -31,11 +31,11 @@ export default function ParishLifeSection() {
   const [showDsa, setShowDsa] = useState(false);
 
   const eventLinks = [
-    { icon: 'ri-book-open-line', label: t('events.education') },
-    { icon: 'ri-group-line', label: t('events.occia') },
-    { icon: 'ri-music-line', label: t('events.music') },
-    { icon: 'ri-heart-line', label: t('events.soulCore') },
-    { icon: 'ri-school-line', label: t('events.school') },
+    { icon: 'ri-book-open-line', label: t('events.education'), href: 'https://stjoan.org/wp/ccd/' },
+    { icon: 'ri-group-line', label: t('events.occia'), href: 'https://stjoan.org/wp/rcia/' },
+    { icon: 'ri-music-line', label: t('events.music'), href: 'https://stjoan.org/wp/ministries/' },
+    { icon: 'ri-heart-line', label: t('events.soulCore'), href: 'https://stjoan.org/wp/ministries/' },
+    { icon: 'ri-school-line', label: t('events.school'), href: 'https://stjoan.org/wp/school/' },
   ];
 
   const donations = [
@@ -160,7 +160,9 @@ export default function ParishLifeSection() {
               {eventLinks.map((event, i) => (
                 <a
                   key={i}
-                  href="#"
+                  href={event.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-primary-50 transition-colors cursor-pointer group"
                 >
                   <span className="w-7 h-7 flex items-center justify-center rounded-full bg-primary-50 text-primary-500 group-hover:bg-primary-500 group-hover:text-white transition-colors flex-shrink-0">

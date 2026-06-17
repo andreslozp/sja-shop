@@ -6,12 +6,12 @@ export default function MinistriesSection() {
   const { ref: sectionRef, isVisible } = useScrollReveal();
 
   const ministries = [
-    { icon: 'ri-music-2-line', label: t('ministries.liturgicalMusic'), bg: 'bg-purple-50', text: 'text-purple-700' },
-    { icon: 'ri-heart-line', label: t('ministries.care'), bg: 'bg-red-50', text: 'text-red-700' },
-    { icon: 'ri-restaurant-line', label: t('ministries.foodPantry'), bg: 'bg-orange-50', text: 'text-orange-700' },
-    { icon: 'ri-global-line', label: t('ministries.hispanic'), bg: 'bg-yellow-50', text: 'text-yellow-700' },
-    { icon: 'ri-book-open-line', label: t('ministries.religiousEd'), bg: 'bg-blue-50', text: 'text-blue-700' },
-    { icon: 'ri-group-line', label: t('ministries.youth'), bg: 'bg-green-50', text: 'text-green-700' },
+    { icon: 'ri-music-2-line', label: t('ministries.liturgicalMusic'), bg: 'bg-purple-50', text: 'text-purple-700', href: 'https://stjoan.org/wp/ministries/' },
+    { icon: 'ri-heart-line', label: t('ministries.care'), bg: 'bg-red-50', text: 'text-red-700', href: 'https://stjoan.org/wp/ministries/' },
+    { icon: 'ri-restaurant-line', label: t('ministries.foodPantry'), bg: 'bg-orange-50', text: 'text-orange-700', href: 'https://stjoan.org/wp/ministries/' },
+    { icon: 'ri-global-line', label: t('ministries.hispanic'), bg: 'bg-yellow-50', text: 'text-yellow-700', href: 'https://stjoan.org/wp/ministries/' },
+    { icon: 'ri-book-open-line', label: t('ministries.religiousEd'), bg: 'bg-blue-50', text: 'text-blue-700', href: 'https://stjoan.org/wp/ccd/' },
+    { icon: 'ri-group-line', label: t('ministries.youth'), bg: 'bg-green-50', text: 'text-green-700', href: 'https://stjoan.org/wp/ministries/' },
   ];
 
   return (
@@ -30,7 +30,9 @@ export default function MinistriesSection() {
         {ministries.map((ministry, i) => (
           <a
             key={i}
-            href="#"
+            href={ministry.href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex flex-col items-center gap-2 p-4 bg-white rounded-xl border border-background-200 hover:border-primary-500/30 hover:bg-primary-50 transition-all cursor-pointer group"
           >
             <span className={`w-10 h-10 flex items-center justify-center rounded-full ${ministry.bg} ${ministry.text} group-hover:scale-110 transition-transform`}>
